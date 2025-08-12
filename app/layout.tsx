@@ -18,7 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      data-ember-extension="1"
+      data-lt-installed="true"
+      suppressHydrationWarning={true}
+    >
       <body
         className={`${inter.variable} antialiased min-h-screen grid place-content-center`}
       >

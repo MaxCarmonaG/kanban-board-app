@@ -11,7 +11,7 @@ const Header: FC = () => (
         height={24}
         className="h-6 w-6"
       />
-      <h2>Project M.</h2>
+      <h2 className="text-h2">Project M.</h2>
     </div>
     <Image
       src="/arrow-left.svg"

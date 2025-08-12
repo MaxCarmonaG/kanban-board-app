@@ -4,30 +4,60 @@
   --background: #FFFFFF;
   --foreground: #787486;
   --body-background: #E7E8EA;
-  --color-gainsboro: #DCDCDC;
+  --color-gainsboro: #DBDBDB;
   --color-whitesmoke: #F5F5F5;
   --color-dark: #0D062D;
+  --color-green: #7AC555;
+  --color-orange: #FFA500;
+  --color-lavender: #E4CCFD;
+  --color-blue: #76A5EA;
+  --color-periwinkle: #F1E6FF;
+  --color-golden: #FCD64A;
+  --color-purple: #5030E5;
+  --color-charcoal: #292D32;
+  --color-danger: #D25B68;
+  --color-danger-bg: #F4D7DA;
+  --color-success: #68B266;
+  --color-success-bg: #E6F3EB;
+  --color-warning: #D58D49;
+  --color-warning-bg: #F9EEE3;
+  --text-h1-size: 2.875rem;
+  --text-h1-weight: 600;
+  --text-h1-height: 3.5rem;
+  --text-h2-size: 1.25rem;
+  --text-h2-weight: 600;
+  --text-h2-height: 1.5rem;
 }
 
 @theme {
-  --color-foreground: var(--color-foreground);
+  --color-foreground: var(--foreground);
   --color-gainsboro: var(--color-gainsboro);
   --color-whitesmoke: var(--color-whitesmoke);
   --color-dark: var(--color-dark);
+  --color-green: var(--color-green);
+  --color-orange: var(--color-orange);
+  --color-lavender: var(--color-lavender);
+  --color-blue: var(--color-blue);
+  --color-periwinkle: var(--color-periwinkle);
+  --color-golden: var(--color-golden);
+  --color-purple: var(--color-purple);
+  --color-charcoal: var(--color-charcoal);
+  --color-danger: var(--color-danger);
+  --color-danger-bg: var(--color-danger-bg);
+  --color-success: var(--color-success);
+  --color-success-bg: var(--color-success-bg);
+  --color-warning: var(--color-warning);
+  --color-warning-bg: var(--color-warning-bg);
+  --text-h1: var(--text-h1-size);
+  --text-h1--font-weight: var(--text-h1-weight);
+  --text-h1--font-height: var(--text-h1-height);
+  --text-h2: var(--text-h2-size);
+  --text-h2--font-weight: var(--text-h2-weight);
+  --text-h2--font-height: var(--text-h2-height);
 }
 
 body {
   background: var(--body-background);
   color: var(--foreground);
   font-family: "Inter", sans-serif;
-}
-
-main {
-  background: var(--background);
-}
-
-h2 {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
 }

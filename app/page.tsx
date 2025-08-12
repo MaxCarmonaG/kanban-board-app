@@ -1,76 +1,39 @@
 import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import Image from "next/image";
+import Menu from "@/components/Menu";
+import HeaderSection from "@/components/HeaderSection";
+import OutlineButton from "@/components/OutlineButton";
+import ArrowIcon from "@/public/arrow-down.svg";
+import FilterSection from "@/components/FilterSection";
+import DotIcon from "@/public/dot.svg";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto_1fr] grid-cols-[auto_1fr] max-w-[1440px]  bg-white rounded-[30px] overflow-hidden">
+    <div className="grid grid-rows-[auto_1fr] grid-cols-[250px_1fr] max-w-[1440px]  bg-white rounded-[30px] overflow-hidden">
       <Header />
-      <nav className="flex row justify-between items-center px-12 py-6 border-b border-gainsboro gap-x-14">
-        <label className="flex items-center gap-x-4 px-4 py-3 bg-whitesmoke rounded-[6px]">
-          <Image
-            src="/search-normal.svg"
-            alt="Search Icon"
-            width={24}
-            height={24}
-            className="h-6 w-6"
-          />
-          <input
-            name="search"
-            type="text"
-            placeholder="Search for anything..."
-            className="placeholder:text-foreground"
-          />
-        </label>
-        <div className="flex items-center gap-x-14">
-          <div className="flex items-center gap-x-6">
-            <Image
-              src="/calendar-2.svg"
-              alt="Calendar Icon"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
-            <Image
-              src="/message-question.svg"
-              alt="Message Question Icon"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
-            <Image
-              src="/notification.svg"
-              alt="Notification Icon"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
-          </div>
-          <div className="flex items-center gap-x-6">
-            <div>
-              <div className="text-dark">Anima Agrawal</div>
-              <div>U.P, India</div>
-            </div>
-            <div className="flex items-center justify-between gap-x-2.5">
-              <Image
-                src="/user-1.png"
-                alt="User 1 Icon"
-                width={38}
-                height={38}
-                className="h-[38px] w-[38px] rounded-full"
-              />
-              <Image
-                src="/arrow-down.svg"
-                alt="Arrow Down Icon"
-                width={18}
-                height={18}
-                className="h-[18px] w-[18px]"
-              />
+      <Navigation />
+      <Menu />
+      <main className="px-12 py-10">
+        <HeaderSection />
+        <FilterSection />
+        <div className="flex gap-x-4">
+          <div className="p-5 bg-whitesmoke rounded-2xl">
+            <div className="flex items-center justify-between border-b border-purple pb-5">
+              <div className="flex items-center gap-x-3">
+                <div className="flex items-center gap-x-2">
+                  <DotIcon width={8} height={8} className="text-purple" />
+                  <span className="text-dark font-medium">To Do</span>
+                </div>
+                <span className="w-5 h-5 bg-gainsboro rounded-full text-center text-xs/5">
+                  4
+                </span>
+              </div>
+              <Image src="/add-square.svg" alt="Add" width={24} height={24} />
             </div>
           </div>
         </div>
-      </nav>
-      <aside className="flex row gap-x-[46px]">Sidebar</aside>
-      <main className="flex row gap-x-[46px]">Main</main>
+      </main>
     </div>
   );
 }
