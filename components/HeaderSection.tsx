@@ -1,31 +1,26 @@
 import { FC } from "react";
 import Image from "next/image";
-
-type Avatar = {
-  id: string;
-  title: string;
-  src: string;
-};
+import { Avatar } from "@/types";
 
 const data: Avatar[] = [
   {
     id: "a2",
-    title: "User2 Avatar",
+    alt: "User2 Avatar",
     src: "/user-2.png",
   },
   {
     id: "a3",
-    title: "User3 Avatar",
+    alt: "User3 Avatar",
     src: "/user-3.png",
   },
   {
     id: "a4",
-    title: "User4 Avatar",
+    alt: "User4 Avatar",
     src: "/user-4.png",
   },
   {
     id: "a5",
-    title: "User5 Avatar",
+    alt: "User5 Avatar",
     src: "/user-5.png",
   },
 ];
@@ -61,14 +56,14 @@ const HeaderSection: FC = () => {
           <span className="font-semibold text-purple">Invite</span>
         </div>
         <div className="flex items-center">
-          {data.map(({ id, title, src }) => (
+          {data.map(({ id, alt, src }) => (
             <Image
               key={id}
               src={src}
-              alt={title}
+              alt={alt}
               width={38}
               height={38}
-              className={`rounded-full border border-white -ml-2`}
+              className="rounded-full border border-white -ml-2"
             />
           ))}
           {remainingUsers > 0 && (

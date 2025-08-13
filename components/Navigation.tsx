@@ -4,7 +4,7 @@ import ArrowIcon from "@/public/arrow-down.svg";
 
 const Navigation: FC = () => (
   <nav className="flex row justify-between items-center px-12 py-6 border-b border-gainsboro gap-x-14">
-    <label className="flex items-center gap-x-4 px-4 py-3 bg-whitesmoke rounded-md">
+    <label className="flex items-center gap-x-4 px-4 py-3 bg-whitesmoke rounded-md w-full max-w-104">
       <Image
         src="/search-normal.svg"
         alt="Search Icon"

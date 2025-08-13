@@ -9,7 +9,7 @@ const Thoughts: FC = () => (
         <div className="absolute bg-radial opacity-30  from-golden from-10% to-transparent to-70% top-0 right-0 bottom-0 left-0"></div>
       </div>
     </div>
-    <h3 className="text-black font-medium text-sm mb-3">Thoughts Time</h3>
+    <h4 className="text-black font-medium text-sm mb-3">Thoughts Time</h4>
     <p className="text-xs mb-3.5">
       We don’t have any notice for you, till then you can share your thoughts
       with your peers.
