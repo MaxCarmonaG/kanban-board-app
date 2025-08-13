@@ -1,26 +1,43 @@
 "use client";
 
-import { FC } from "react";
-import Card from "./Card";
+import { FC, useContext } from "react";
 import Status from "./Status";
-import { data } from "@/data";
-import { StatusType, Task } from "@/types";
-import { DragifyProvider } from "react-beautiful-dragify";
+import { DndContext, DragOverlay } from "@dnd-kit/core";
+import Card, { CardProps } from "./Card";
+import { StoreContext } from "@/providers";
 
 const Board: FC = () => {
-  const statuses = Object.keys(data) as StatusType[];
+  const {
+    statusKeys,
+    currentBoard,
+    activeData,
+    onDragStartHandler,
+    onDragEndHandler,
+  } = useContext(StoreContext);
+
   return (
-    <DragifyProvider onDragEnd={() => {}}>
-      <section className="flex gap-x-4">
-        {statuses.map((status) => (
-          <Status key={status} status={status} count={data[status].length}>
-            {data[status].map((task, i) => (
-              <Card key={task.id} {...task} index={i} />
-            ))}
-          </Status>
+    <DndContext onDragEnd={onDragEndHandler} onDragStart={onDragStartHandler}>
+      <div className="flex gap-x-4">
+        {statusKeys.map((status) => (
+          <Status
+            key={status}
+            status={status}
+            count={currentBoard[status].length}
+            tasks={currentBoard[status]}
+          />
         ))}
-      </section>
-    </DragifyProvider>
+      </div>
+      <DragOverlay>
+        {activeData ? (
+          <div
+            className="cursor-grabbing"
+            style={{ transform: "rotate(5deg)" }}
+          >
+            <Card {...(activeData as CardProps)} />
+          </div>
+        ) : null}
+      </DragOverlay>
+    </DndContext>
   );
 };
 

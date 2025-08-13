@@ -6,7 +6,7 @@ import Thoughts from "./Thoughts";
 const Menu: FC = () => (
   <aside className="flex flex-col px-3 py-7.5 border-r border-gainsboro">
     <Submenu />
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between flex-1">
       <Projects />
       <Thoughts />
     </div>

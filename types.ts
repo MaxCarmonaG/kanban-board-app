@@ -1,10 +1,12 @@
-export type Avatar = {
+import { DragEndEvent, DragStartEvent } from "@dnd-kit/core";
+
+export type AvatarType = {
   id: string;
   alt: string;
   src: string;
 };
 
-export type Task = {
+export type TaskType = {
   id: string;
   priority: "low" | "high" | "completed";
   title: string;
@@ -16,11 +18,35 @@ export type Task = {
   }[];
   comments: number;
   files: number;
-  avatars: Avatar[];
+  avatars: AvatarType[];
 };
 
-export type Data = {
-  [key in StatusType]: Task[];
+export type ProjectDataType = {
+  [key in StatusType]: TaskType[];
+};
+
+export type BoardDataType = {
+  id: string;
+  title: string;
+  isActive: boolean;
+  color: string;
+  board: {
+    [key in StatusType]: TaskType[];
+  };
 };
 
 export type StatusType = "todo" | "onProgress" | "done";
+
+export type StoreContextType = {
+  projectsList: Omit<BoardDataType, "board">[];
+  handleCurrentBoard: (id: string) => void;
+  currentBoard: ProjectDataType;
+  statusKeys: StatusType[];
+  activeData?: AnyData;
+  onDragStartHandler: (event: DragStartEvent) => void;
+  onDragEndHandler: (event: DragEndEvent) => void;
+};
+
+export type AnyData = {
+  [x: string]: any;
+};

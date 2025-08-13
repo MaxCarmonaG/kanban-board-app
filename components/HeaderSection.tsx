@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Avatar } from "@/types";
+import { AvatarType } from "@/types";
 
-const data: Avatar[] = [
+const data: AvatarType[] = [
   {
     id: "a2",
     alt: "User2 Avatar",

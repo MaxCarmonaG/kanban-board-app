@@ -1,18 +1,23 @@
-import { FC, PropsWithChildren } from "react";
+"use client";
+
+import { FC } from "react";
 import Image from "next/image";
 import DotIcon from "@/public/dot.svg";
-import { StatusType } from "@/types";
+import { StatusType, TaskType } from "@/types";
+import Card from "./Card";
+import { useDroppable } from "@dnd-kit/core";
 
 interface StatusProps {
   status: StatusType;
   count: number;
+  tasks: TaskType[];
 }
 
-const Status: FC<PropsWithChildren<StatusProps>> = ({
-  children,
-  status,
-  count,
-}) => {
+const Status: FC<StatusProps> = ({ status, count, tasks }) => {
+  const { setNodeRef } = useDroppable({
+    id: status,
+  });
+
   const baseBorderStyle =
     "flex items-center justify-between border-b-3 pb-5 mb-7";
 
@@ -35,7 +40,7 @@ const Status: FC<PropsWithChildren<StatusProps>> = ({
   }[status];
 
   return (
-    <div className="p-5 bg-whitesmoke rounded-2xl w-88.5">
+    <div className="pt-5 px-5 bg-whitesmoke rounded-t-2xl w-88.5">
       <div className={borderStyle}>
         <div className="flex items-center gap-x-3">
           <div className="flex items-center gap-x-2">
@@ -50,7 +55,14 @@ const Status: FC<PropsWithChildren<StatusProps>> = ({
           <Image src="/add-square.svg" alt="Add" width={24} height={24} />
         )}
       </div>
-      <div className="flex flex-col gap-y-5">{children}</div>
+      <section
+        className="flex flex-col gap-y-5 overflow-y-auto h-127"
+        ref={setNodeRef}
+      >
+        {tasks.map((task) => (
+          <Card key={task.id} {...task} status={status} />
+        ))}
+      </section>
     </div>
   );
 };
