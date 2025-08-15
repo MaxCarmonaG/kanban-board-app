@@ -40,7 +40,7 @@ const Status: FC<StatusProps> = ({ status, count, tasks }) => {
   }[status];
 
   return (
-    <div className="pt-5 px-5 bg-whitesmoke rounded-t-2xl w-88.5">
+    <div className="pt-5 px-5 bg-whitesmoke rounded-t-2xl max-w-88.5">
       <div className={borderStyle}>
         <div className="flex items-center gap-x-3">
           <div className="flex items-center gap-x-2">
@@ -56,7 +56,7 @@ const Status: FC<StatusProps> = ({ status, count, tasks }) => {
         )}
       </div>
       <section
-        className="flex flex-col gap-y-5 overflow-y-auto h-127"
+        className="flex flex-col gap-y-5 overflow-y-auto h-130"
         ref={setNodeRef}
       >
         {tasks.map((task) => (

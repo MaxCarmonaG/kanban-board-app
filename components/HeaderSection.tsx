@@ -31,7 +31,7 @@ const HeaderSection: FC = () => {
   const remainingUsers = totalUsers - data.length;
 
   return (
-    <div className="flex justify-between items-center mb-10">
+    <div className="flex flex-col gap-y-4 items-center lg:flex-row lg:justify-between mb-10">
       <div className="flex items-center gap-x-5">
         <h1 className="text-dark font-semibold text-h1">Mobile App</h1>
         <div className="flex gap-x-3">

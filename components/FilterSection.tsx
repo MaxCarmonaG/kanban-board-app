@@ -3,7 +3,7 @@ import OutlineButton from "./OutlineButton";
 import ArrowIcon from "@/public/arrow-down.svg";
 
 const FilterSection = () => (
-  <div className="flex justify-between align-center mb-10.5">
+  <div className="flex flex-col gap-y-4 items-center lg:flex-row lg:justify-between mb-10.5">
     <div className="flex align-center gap-x-3 font-medium">
       <OutlineButton>
         <div className="flex align-center gap-x-1.5">

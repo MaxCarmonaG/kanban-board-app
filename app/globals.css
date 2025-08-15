@@ -65,13 +65,13 @@
   --color-warning-bg: var(--color-warning-bg);
   --text-h1: var(--text-h1-size);
   --text-h1--font-weight: var(--text-h1-weight);
-  --text-h1--font-height: var(--text-h1-height);
+  --text-h1--line-height: var(--text-h1-height);
   --text-h2: var(--text-h2-size);
   --text-h2--font-weight: var(--text-h2-weight);
-  --text-h2--font-height: var(--text-h2-height);
+  --text-h2--line-height: var(--text-h2-height);
   --text-h3: var(--text-h3-size);
   --text-h3--font-weight: var(--text-h3-weight);
-  --text-h3--font-height: var(--text-h3-height);
+  --text-h3--line-height: var(--text-h3-height);
 }
 
 body {

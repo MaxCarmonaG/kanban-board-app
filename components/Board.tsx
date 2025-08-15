@@ -16,28 +16,30 @@ const Board: FC = () => {
   } = useContext(StoreContext);
 
   return (
-    <DndContext onDragEnd={onDragEndHandler} onDragStart={onDragStartHandler}>
-      <div className="flex gap-x-4">
-        {statusKeys.map((status) => (
-          <Status
-            key={status}
-            status={status}
-            count={currentBoard[status].length}
-            tasks={currentBoard[status]}
-          />
-        ))}
-      </div>
-      <DragOverlay>
-        {activeData ? (
-          <div
-            className="cursor-grabbing"
-            style={{ transform: "rotate(5deg)" }}
-          >
-            <Card {...(activeData as CardProps)} />
-          </div>
-        ) : null}
-      </DragOverlay>
-    </DndContext>
+    <div className="overflow-x-auto">
+      <DndContext onDragEnd={onDragEndHandler} onDragStart={onDragStartHandler}>
+        <div className="flex gap-x-4 overflow-x-auto min-w-273.5">
+          {statusKeys.map((status) => (
+            <Status
+              key={status}
+              status={status}
+              count={currentBoard[status].length}
+              tasks={currentBoard[status]}
+            />
+          ))}
+        </div>
+        <DragOverlay>
+          {activeData ? (
+            <div
+              className="cursor-grabbing"
+              style={{ transform: "rotate(5deg)" }}
+            >
+              <Card {...(activeData as CardProps)} />
+            </div>
+          ) : null}
+        </DragOverlay>
+      </DndContext>
+    </div>
   );
 };
 
