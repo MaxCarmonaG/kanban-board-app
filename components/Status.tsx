@@ -40,7 +40,7 @@ const Status: FC<StatusProps> = ({ status, count, tasks }) => {
   }[status];
 
   return (
-    <div className="pt-5 px-5 bg-whitesmoke rounded-t-2xl max-w-88.5">
+    <div className="pt-5 px-5 bg-whitesmoke rounded-t-2xl flex-1">
       <div className={borderStyle}>
         <div className="flex items-center gap-x-3">
           <div className="flex items-center gap-x-2">
